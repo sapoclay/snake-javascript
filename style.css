@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #410077;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #414c5fe8;
+  box-shadow: 0 0 0 4px #f00, inset 2px 2px rgba(136, 0, 0, 0.26), 3px 4px rgba(0, 0, 0, 0.144);
+  overflow: hidden;
+}
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #212837;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.play-board .food {
+  background-repeat: no-repeat;
+  background-image: url("./img/Manzana.png");
+  background-size: 15px;
+}
+.play-board .head {
+  background: #25df00;
+  border-radius: 20%;
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
+}
+
+/*Título*/
+.titulo {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  border: none;
+  font: normal 38px / normal "Warnes", Helvetica, sans-serif;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: normal;
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  white-space: pre;
+  text-shadow: 0 0 10px rgb(255, 0, 0), 0 0 20px rgba(255, 0, 0),
+    0 0 30px rgba(255, 0, 0), 0 0 40px #727272, 0 0 70px #727272,
+    0 0 80px #4e4e4e, 0 0 100px #2b2b2b;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  width: 100%;
+  margin-top: 10px;
+}
+.titulo:hover {
+  text-shadow: 0 0 10px rgb(184, 0, 0), 0 0 20px rgb(184, 0, 0),
+    0 0 30px rgb(236, 0, 0), 0 0 40px #b80707, 0 0 70px #ff0000,
+    0 0 80px #bd0000, 0 0 100px #b41212;
+}
+
+@media screen and (max-width: 800px) {
+  body{
+    min-height: 80vh;
+  }
+  .wrapper {
+    width: 85vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+  .game-details{
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .play-board {
+    height: 68%;
+  }
+  .play-board .food {
+    background-size: 9px;
+  }
+  .wrapper {
+    width: 95vmin;
+  }
+}
